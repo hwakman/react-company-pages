@@ -1,28 +1,50 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import {BrowserRouter as Router, Route} from 'react-router-dom'
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Login from './Login/Login';
+import Home from './Home/Home';
+import Menu from './MenuBar/MenuBar';
+import Project from './Project/Project';
+import About from './About/About';
+import Product from './Product/Product';
+import Loader from './loader';
 import './App.css';
 
 class App extends Component {
+  state = {
+    isLoading: true
+  }
+  componentDidMount(){
+    setTimeout(()=> {
+      this.setState({isLoading:false})
+    },800)
+  }
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+        <span style={this.state.isLoading ? {display:"block"}:{display:"none"}}>
+          <Loader />
+        </span>
+
+        <span style={this.state.isLoading ? {display:"none"}:{display:"block"}}>
+          <Menu />
+          <Route exact path='/' component={Home} />
+          <Route path='/home' component={Home} />
+          <Route path="/Project" component={Project} />
+          <Route path="/Product" component={Product} />
+          <Route path="/About" component={About} />
+        </span>
       </div>
     );
   }
 }
 
-export default App;
+const RouterComp = () => {
+  return(
+    <Router>
+      <App />
+    </Router>
+  )
+}
+
+export default RouterComp;
