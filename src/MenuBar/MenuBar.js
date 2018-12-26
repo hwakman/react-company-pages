@@ -19,17 +19,34 @@ const MenuSM = (props) => {
     )
 }
 
-const MenuLG = () => {
-    return(
-        <React.Fragment>
-            <nav className="shadow navbar navbar-secondary bg-secondary d-flex justify-content-between">
-            <span>
-                <button className="btn btn-secondary">Menu</button>
-            </span>
-                <button className="btn btn-outline-light">Careers</button>
-            </nav>
-        </React.Fragment>
-    )
+class MenuLG extends Component {
+    state = {
+        openMenu : false
+    }
+    setOpenMenu = () =>{
+        this.setState({
+            openMenu:!this.state.openMenu
+        });
+    }
+    render(){
+        const props = this.props;
+        return(
+            <React.Fragment>
+                <nav className="shadow navbar navbar-secondary bg-secondary d-flex justify-content-between">
+                <span>
+                    <button onClick={this.setOpenMenu} className="btn btn-secondary">Menu</button>
+                </span>
+                </nav>
+                <nav className="col-sm bg-dark pt-2" style={this.state.openMenu ? {display:"block"}:{display:"none"}}>
+                    <button onClick={props.redirectPath.bind(this,'/Home')} className="btn btn-dark btn-block"><b>Home</b></button>
+                    <button onClick={props.redirectPath.bind(this,'/Project')} className="btn btn-dark btn-block"><b>Project</b></button>
+                    <button onClick={props.redirectPath.bind(this,'/Product')} className="btn btn-dark btn-block"><b>Product</b></button>
+                    <button onClick={props.redirectPath.bind(this,'/About')} className="btn btn-dark btn-block"><b>About</b></button>
+                    <button onClick={props.redirectPath.bind(this,'/Careers')} className="btn btn-dark btn-block"><b>Careers</b></button>
+                </nav>
+            </React.Fragment>
+        )
+    }
 }
 
 class MenuBar extends Component {
@@ -47,7 +64,7 @@ class MenuBar extends Component {
                     <MenuSM redirectPath={this.redirectPath} />
                 </span>
                 <span className="d-block d-lg-none">
-                    <MenuLG />
+                    <MenuLG redirectPath={this.redirectPath} />
                 </span>
             </React.Fragment>
         )
