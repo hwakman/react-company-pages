@@ -2,7 +2,7 @@
   "name": "redux-mern",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://hwakman.github.io/react-company-pages",
+  "homepage": "https://hwakman.github.io/react-company-pages/",
   "dependencies": {
     "bootstrap": "^4.2.1",
     "gh-pages": "^2.0.1",
