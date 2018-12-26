@@ -12,4 +12,4 @@ build project :
 `$ npm run build`
 
 site demo :
-[demo](https://enigmatic-wave-53957.herokuapp.com/);
+[demo](https://enigmatic-wave-53957.herokuapp.com/)
