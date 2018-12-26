@@ -1,13 +1,15 @@
-```
 install :
-$ git clone https://github.com/hwakman/react-company-pages.git
+`$ git clone https://github.com/hwakman/react-company-pages.git`
 
-$ cd react-company-pages
+`$ cd react-company-pages`
 
-$ npm install
+`$ npm install`
 
 start project :
-$ npm start
+`$ npm start`
 
 build project : 
-$ npm run build
+`$ npm run build`
+
+site demo :
+[demo](https://enigmatic-wave-53957.herokuapp.com/);
