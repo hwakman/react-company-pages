@@ -12,7 +12,7 @@ const MenuSM = (props) => {
             <button onClick={props.redirectPath.bind(this,'/Product')} className="btn btn-secondary"><b>Product</b></button>
             <button onClick={props.redirectPath.bind(this,'/About')} className="btn btn-secondary"><b>About</b></button>
         </span>
-            <button className="btn btn-outline-light"><b>Careers</b></button>
+            <button onClick={props.redirectPath.bind(this,'/Careers')} className="btn btn-outline-light"><b>Careers</b></button>
         </div>
         </nav>
         </React.Fragment>

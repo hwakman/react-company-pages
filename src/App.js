@@ -8,6 +8,7 @@ import Project from './Project/Project';
 import About from './About/About';
 import Product from './Product/Product';
 import Loader from './loader';
+import Careers from './Careers/Careers'
 import './App.css';
 
 class App extends Component {
@@ -17,7 +18,7 @@ class App extends Component {
   componentDidMount(){
     setTimeout(()=> {
       this.setState({isLoading:false})
-    },800)
+    },1000)
   }
   render() {
     return (
@@ -33,6 +34,7 @@ class App extends Component {
           <Route path="/Project" component={Project} />
           <Route path="/Product" component={Product} />
           <Route path="/About" component={About} />
+          <Route path="/Careers" component={Careers} />
         </span>
       </div>
     );
